@@ -1,6 +1,18 @@
 import { describe, expect, test } from 'vitest'
 import { convertTemperature } from './App'
 
+// Polyfill for crypto.getRandomValues
+if (!global.crypto) {
+	global.crypto = {
+		getRandomValues: (arr) => {
+			for (let i = 0; i < arr.length; i++) {
+				arr[i] = Math.floor(Math.random() * 256)
+			}
+			return arr
+		},
+	}
+}
+
 describe('convertTemperature', () => {
 	test('converts Celsius to Fahrenheit', () => {
 		const result = convertTemperature(0, 'Celsius', 'Fahrenheit')
