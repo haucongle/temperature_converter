@@ -11,6 +11,9 @@
 		"test": "vitest"
 	},
 	"dependencies": {
+		"@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+		"@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+		"crypto-browserify": "^3.12.1",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0"
 	},
